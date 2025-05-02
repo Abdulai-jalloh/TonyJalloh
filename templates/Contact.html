@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Page</title>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="Contact-page">
+ <section class="Head">
+  <a href="/">Accueil</a>
+  <a href="/lands">Voir les terrains</a>
+ </section>
+ <section class="contact-hero">
+  <h1>Contacte nous</h1> <br>
+  <h3 class="msg">si vous ne trouves pas le terrain que vous reacherchez, <br> n'hésitez pas à nous contacter - nous sommes heureux de vous aider!</h3>
+  <br> <br> <br> <br> <br>
+  
+  <p> <img src="/static/images/call.png" alt="Call Icon" class="Icon"> <strong>Phone:</strong><a href="tel:+224620000123">+224620000123</a></p>
+  <p> <img src="/static/images/Email.png" alt="Email Icon" class="Icon"><strong>Email:</strong><a href="mailto:example.gmeil.com">examplegmail.com</a></p>
+ </section>
+  <div class="Contact-container">
+    <br> <br> <br>
+    <form id="contact-frm" action="">
+      <fieldset>
+        <legend>Information personnelles</legend>
+      <label for="FirstName">Prénom</label>
+      <input type="text" id="FirstName" required>
+      <label for="LastName">nom</label>
+      <input type="text" id="LastName" required>
+      <label for="PhoneNumber">Numero</label>
+      <input type="tel" id="phone" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+      <label for="message">Votre message</label>
+      <textarea name="" id="message" rows="5" required></textarea>
+      <button type="submit" id="">Soumettre</button>
+    </fieldset>
+    </form>
+
+    <div id="sentMessage" class="hidden">
+      <h2>Merci de nous avoir contactés!. Nous vous répondrons dans les plus brefs délais..</h2>
+    </div>
+  </div>
+  <footer id="Contact">
+    <p> &copy; 2025 LandX. Tous droits réservés.</p>
+  </footer>
+  <script src="/static/main.js" defer></script>
+</body>
+</html>

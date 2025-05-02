@@ -1,0 +1,525 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+body{
+  margin: 0;
+  padding: 1px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; 
+}
+
+header {
+
+  align-items: center;
+  background-color: #008080;
+  text-align: center;
+  padding: 16px;
+  font-size: bold;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* background: #008080;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center; */
+}
+
+/* header .logo{
+  font-size: 1.5rem;
+  font-weight: bold;
+} */
+
+nav a {
+  margin: 1rem;
+  color: white;
+  text-decoration: none;
+}
+.hero {
+  position: relative;
+  background-position: center;
+font-weight: bold;
+  padding: 80px 20px;
+  color:black;
+  text-align: center;
+  background: url('/static/images/house.jpg') repeat center center/cover;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+.sec{
+  text-align: center;
+  font-weight: bold;
+}
+.hero .btn{
+  margin-top: 15px;
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.featured-lands {
+  padding: 2em;
+}
+.lands-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+
+#lands-Container{
+  display: inline-block;
+  align-items: center;
+ }
+
+.land-card {
+font-weight: bold;
+min-height: 300px;
+flex: 0 0 auto;
+border: 1px solid #ccc;
+border-radius: 10px;
+scroll-snap-align: start;
+background: white;
+padding: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0, 1);
+}
+
+.cen{
+  text-align: center;
+}
+
+.land-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+footer  {
+  text-align: center;
+  padding: 1rem;
+  background: #008080;
+  color: white;
+  margin-top: 2em;
+}
+/* Style for land deatails */
+
+.land-details{
+  background-color: #fff;
+  padding: 100px;
+  border-radius: 10px;
+  /* max-width: 80px; */
+  margin: auto;
+  box-shadow: 0 2px 8px rgb(0, 0, 0, 0, 1);
+}
+
+.land-details img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.land-details h2{
+  margin-top: 10px;
+}
+.land-details p {
+  font-size: 16px;
+  margin: 12px 0;
+}
+
+.back-link{
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.about {
+  background: #eef1f4;
+  padding: 2rem;
+  text-align: center;
+}
+
+.search-box input{
+flex: 1;
+padding: 12px;
+border: none;
+outline: none;
+font-size: 16px;
+width: 100%;
+}
+
+.search-icon{
+  /* align-items: center; */
+  padding: 12px 16px;
+  cursor: pointer;
+  background-color: #2e8b57;
+  color: white;
+  font-size: 18px;
+  border-left: 1px solid #ccc;
+}
+
+.search-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 100%;
+  background-color: white;
+  margin-bottom: 20px;
+}
+.hero-content{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#search-location{
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.no-result{
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #888;
+}
+
+/* contact style */
+
+.Contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.Contact-container input,
+.Contact-container textarea {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+}
+
+button {
+  background-color: #0a74da;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+.hidden{
+  font-size: bold;
+  background-color: #008080;
+  color:white;
+  display: none;
+
+}
+
+
+.Head{
+  align-items: center;
+  background-color: #008080;
+  text-align: center;
+  padding: 16px;
+}
+.Head a {
+  margin: 1rem;
+  color: white;
+}
+
+.contact-hero{
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  padding: 100px 20px;
+  text-align: center;
+  color: rgb(250, 250, 250);
+  background: url('/static/images/house.jpg') no-repeat center center/cover;
+}
+
+.contact-hero h1 {
+  font-size: 3rem;
+}
+.contact-hero a{
+  color: #fff
+}
+
+.contact-hero a:hover{
+color: #0a74da;
+}
+
+fieldset {
+  background: #d4ffd3;
+  border: 2px solid #007bff;
+  padding: 20px;
+  border-radius: 5px;
+}
+legend {
+  font-weight: bold;
+  /* color: #007bff; */
+  padding: 0 10px;
+}
+
+.Icon{
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+}
+/* contact style */
+
+/*All lands Style*/
+.AllLands-Sec{
+  align-items: center;
+  text-align: center;
+  background: #008080;
+  padding: 1rem 2rem;
+}
+
+.run{
+  background: linear-gradient(#eefff9 0%, #fcf0ed 49%, #dcdbff 100%);
+  padding: 0 10%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+/* Style for the Run Text */
+.run h1 span{
+  background: linear-gradient(#000, #000);
+  background-repeat: no-repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-size: 0%;
+  margin-top: 100px;
+  font-size: 5.6vw;
+  line-height: 9vw;
+}
+
+.run h1 span:first-child{
+  animation: textcolor1 2s linear infinite alternate;
+}
+.run h1 span:last-child{
+  animation: textcolor2 2s linear infinite alternate;
+}
+
+@keyframes textcolor1 {
+  0%{
+    background-size: 0%;
+  }
+  40%{
+    background-size: 100%;
+  }
+  100%{
+    background-size: 100%;
+  }
+}
+@keyframes textcolor2 {
+  0%{
+    background-size: 0%;
+  }
+  40%{
+    background-size: 0%;
+  }
+  100%{
+    background-size: 100%;
+  }
+}
+
+/* Style for the Run Text */
+
+
+
+
+.all-Lands {
+/* text-align: center; */
+  /* display: inline-block; */
+  /* margin: 800px; */
+  
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  /* gap: 20px; */
+  /* padding: 40px; */
+}
+
+.Lands-card{
+border: 1px solid #ddd;
+margin: 5px ;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 15px ;
+  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  background: #fff;
+}
+
+.Lands-card img{
+  width: 90%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.view-more-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #5dd60c;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.land-filters{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 100%;
+  background-color: white;
+  margin-bottom: 20px;
+}
+.AllLands
+{
+
+  /* background: url('/static/images/Land2.jpg') no-repeat center center/cover; */
+}
+#search-location{
+  padding: 10px;
+  width: 650px;
+  height: 50px;
+  /* border: 1px solid #ccc; */
+  border-right: none;
+  border: #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+.sul{
+  max-width: 600px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.SerachIc{
+  width: 40px;
+  border: none;
+}
+
+.No-result{
+  font-size: 5.1vw;
+}
+
+.Message{
+  width: 20vmax;
+  height: 5vmax;
+  border: 2px solid #2e8b57;
+}
+
+#Omsg{
+  display: block;
+}
+
+#Omsg-B{
+  background: #5dd60c;
+  display: block;
+  padding: 8px 12px;
+}
+
+.menue{
+  width: 20px;
+}
+
+.land-Info{
+  font-weight: bold;
+}
+
+
+/* Add to add land */
+.Admin_frm{
+  
+}
+
+button:hover{
+  background-color: #004466;
+}
+
+
+.admin-f{
+  margin-left: 80px;
+padding: 15px;
+}
+
+.Admin_frm, label, input, textarea{
+  padding: 9px;
+  width:  600px;
+  font-weight: bold;
+  display: block;
+}
+.feat{
+  margin: 4px;
+}
+.admin-page{
+  max-width: 80vmax;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.admin-title{
+  text-align: center;
+}
+
+/* Login style code */
+
+
+.login-page{
+  text-align: center;
+  max-width: 700px;
+  background: #d4ffd3;
+  border: 2px solid #007bff;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+#add-msg{
+  text-align: center;
+  font-weight: bold;
+  color: #5dd60c;
+}
+
+.log-p{
+  background-image: url(/static/images/house.jpg) ;
+}
+
+.log-form{
+  border-radius: 10px;
+}
+
+#flash-m{
+  font-weight: bold;
+  color: red;
+}
+
+.fb-share-button{
+  padding: 10px;
+}
+.all-msg{
+  text-align: center;
+  font-weight: bold;
+}
+footer a{
+  font-weight: bold;
+  color: white;
+}

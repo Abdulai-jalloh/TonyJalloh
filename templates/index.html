@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Home Page</title>
+ 
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="home-page">
+
+  <header>
+    <div class="logo"> 
+    <!-- <h1>LandX - Buy Lands Easily</h1> -->
+  </div>
+    <nav>
+      <a href="{{ url_for('lands') }}" data-key="home-link" >terrain</a>
+      <!-- <a href="Land-details.html">Browse Lands</a> -->
+      <a href="{{ url_for('contact') }}" data-key="home-link" >Contact</a>
+      <a href="{{url_for('upload_land')}}">Admin</a>
+      <!-- <img src="images/menue.jpg" class="menue" alt="Menue"> -->
+    </nav>
+  </header>
+
+  <section class="hero">
+<div class="hero-content">
+ 
+
+  <div class="search-box">
+    <input type="text" id="search-location" placeholder="Entrez le nom de l'emplacement souhaité ">
+    <img src="/static/images/search.png" id="search-Icon" class="SerachIc" alt="">
+   <!-- <span id="searchIcon" class="search-icon">&#128269;</span> -->
+  </div>
+  <a href="{{ url_for('lands') }}" class="btn">terrain en vendette</a>
+</div>
+  </section>
+  <div class="sec"> <h2 data-key="home-title" >Trouvez votre terrain idéal</h2> <br>
+    <p data-key="home-intro" >Nous rendons l'achat de terrain facile et sécurisé.<br> Explores des annonce de terrains vérifiés a travers le pays.</p>
+  </div>
+ 
+  <section class="featured-lands" id="featuredLands">
+    <h3>terrain à vendre</h3>
+    <p class="No-result" style="color: rgb(0, 0, 0); display: none;">Aucun terrain disponible pour cet emplacement pour le moment.</p>
+    <div class="lands-container">
+    
+    </div>
+    
+  </section>
+
+  <section id="about" class="about"> 
+<h2>À propos de nous </h2>
+<p>Nous connectons les acheteurs a des vendeurs de terrain de confiance. <br>Notre mission est de rendre la possession de terrain facile et accessible a tous.. </p>
+  </section>
+
+  <footer id="Contact">
+    <a href="{{ url_for('contact') }}" data-key="home-link" >Contact</a>
+    <p>Contact Us: Awal Innovation.com | +224 123 456 789</p>
+    <p> &copy; 2025 LandX. Tous droits réservés.</p>
+  </footer>
+  <script src="/static/main.js" defer></script>
+  <!-- <script src="{{url_for('static',filename='main.js')}}"></script> -->
+</body>
+</html>

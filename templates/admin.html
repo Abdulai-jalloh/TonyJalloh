@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/style.css">
+  <title>Admin Page</title>
+</head>
+<body> 
+  <header>
+    <nav>
+      <a href="{{ url_for('lands') }}" data-key="home-link" >terrain</a>
+      <!-- <a href="Land-details.html">Browse Lands</a> -->
+      <a href="/">Accueil</a>
+      <!-- <img src="images/menue.jpg" class="menue" alt="Menue"> -->
+    </nav>
+  </header>
+  <br>
+  <div>
+  
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  {% for category, message in messages %}
+
+  <div id="add-msg" class="alert alert-{{category}}">{{message}}</div>
+  
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+</div>
+ <br>
+  <div class="admin-title">
+  <h2>Ajouter un nouveau terrain</h2>
+</div>
+  <section class="admin-page">
+   
+    <fieldset class="admin-f">
+      <legend>New Land Info</legend>
+  <form class="Admin_frm" action="{{url_for('upload_land')}}" method="POST" enctype="multipart/form-data">
+    <label for="title">Titre</label>
+    <input type="text" name="title" id="title" placeholder="land  title" required> <br>
+    <label for="location">Emplacement</label>
+    <input type="text" name="location" id="" placeholder="location" required> <br>
+    <label for="price">Prix</label>
+    <input type="text" name="price" id="" placeholder="land  price" required> <br>
+    <label for="description">Description</label>
+    <textarea rows="3" name="description" id="description" placeholder="land  price" required> </textarea> <br>
+    <label for="features">Caractéristiques (enter multiple):</label>
+    <input type="text" name="features" class="feat" placeholder="features 1">
+    <input type="text" name="features" class="feat" placeholder="features 2">
+    <input type="text" name="features" class="feat" placeholder="features 3">
+    <h3>Information sur le propriétaire</h3>
+    <label for="name">Nom:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="Phone">Numéro de téléphone</label>
+    <input type="text" id="phone" name="phone" required>
+    <label for="Phone">E-mail</label>
+    <input type="text" id="email" name="email" required>
+
+    <label for="map">URL Google Map</label>
+    <textarea rows="3" id="map" name="map" required></textarea>
+
+    <h3>Téléverser une image</h3>
+    <label for="mainimage">Image pricipale</label>
+    <input  type="file" name="mainimage" id="mainimage" accept="image/*" required> <br>
+
+    <label for="gallery">Galerie d'images</label>
+    <input type="file" id="images" name="images" accept="image/*" multiple>
+    <button type="submit">Ajouter le terrain</button>
+  </form>
+</fieldset>
+</section>
+<div id="fd-root"></div>
+<script async defer crossorigin="anonymous" 
+src="https://connect.fecebook.net/en_US/sdk.js#xfbml=1&version=v17.0" nonce="XYZ"></script>
+<div class="fb-share-button" data-href="{{land}}" data-layout="button_count"></div>
+<script src="/static/main.js"></script>
+</body>
+</html>

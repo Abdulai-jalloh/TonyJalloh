@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "title": "new the river",
+    "location": "samatara",
+    "price": "GNF50000000",
+    "mainimage": "static/uploads/land6.jpeg",
+    "images": [
+      "static/uploads/new the river-gallery-1.jpg",
+      "static/uploads/new the river-gallery-2.jpg",
+      "static/uploads/new the river-gallery-3.jpg",
+      "static/uploads/new the river-gallery-4.jpg",
+      "static/uploads/new the river-gallery-5.jpg"
+    ],
+    "features": [
+      "Terrain titr\u00e9 et s\u00e9curis\u00e9",
+      "Zone non inondable",
+      "vue d\u00e9gag\u00e9e"
+    ],
+    "contact": {
+      "name": "Abdulai Jalloh",
+      "email": "abdulaijalloh975@gmail.com",
+      "phone": "632781209"
+    },
+    "description": " this is it",
+    "map": "https://www.google.com/maps/embed?pb=!1m18!m12!1m3!1d15838.4930829496!2d-13.70718975!3d9.5083036!2m3!1fo!2fo!3fo!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc3dc9e5a131%3A0x13c0361efc937289!2zKaloum%2C%20Conakry%2C%20Guinea!5e0!3m2!1sen!sh!4v1712599421745!5m2!1sen!sgh\""
+  },
+  {
+    "id": 2,
+    "title": "new the river",
+    "location": "Tanene",
+    "price": "GNF10000000",
+    "mainimage": "static/uploads/land4-1.jpg",
+    "images": [
+      "static/uploads/new the river-gallery-1.jpg",
+      "static/uploads/new the river-gallery-2.jpg",
+      "static/uploads/new the river-gallery-3.jpg",
+      "static/uploads/new the river-gallery-4.jpg"
+    ],
+    "features": [
+      "Terrain titr\u00e9 et s\u00e9curis\u00e9",
+      "Zone non inondable",
+      "vue d\u00e9gag\u00e9e"
+    ],
+    "contact": {
+      "name": "Abdulai Jalloh",
+      "email": "abdulaijalloh975@gmail.com",
+      "phone": "628910229"
+    },
+    "description": " rhtwoi",
+    "map": "https:www.google/map"
+  }
+]
