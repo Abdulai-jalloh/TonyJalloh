@@ -11,6 +11,7 @@
 <body class="home-page">
 
   <header>
+
     <div class="logo"> 
     <!-- <h1>LandX - Buy Lands Easily</h1> -->
   </div>
@@ -18,7 +19,8 @@
       <a href="{{ url_for('lands') }}" data-key="home-link" >terrain</a>
       <!-- <a href="Land-details.html">Browse Lands</a> -->
       <a href="{{ url_for('contact') }}" data-key="home-link" >Contact</a>
-      <a href="{{url_for('upload_land')}}">Admin</a>
+      <a href="{{url_for('upload_land')}}">se connecter</a>
+      
       <!-- <img src="images/menue.jpg" class="menue" alt="Menue"> -->
     </nav>
   </header>
@@ -33,7 +35,7 @@
    <!-- <span id="searchIcon" class="search-icon">&#128269;</span> -->
   </div>
   
-  <a href="{{ url_for('lands') }}" class="btn">terrain en vendette</a>
+  <a href="{{ url_for('lands') }}" class="btn">Terrain Disponible</a>
 </div>
   </section>
   <div class="sec"> <h2 data-key="home-title" >Trouvez votre terrain idéal</h2> <br>
