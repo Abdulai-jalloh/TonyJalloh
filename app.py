@@ -1,4 +1,4 @@
-from twilio.rest import Client
+
 import os
 import json
 from flask import Flask, render_template, request, redirect, url_for, flash, session
@@ -9,10 +9,6 @@ app.secret_key = 'only those who strong can sovive'
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# this is for the sms message
-account_sid = 'AC0a0455dfb70097d6f82b4b82bbdf3ce'
-auto_taken = '4dec14f596c6b696f2e3b087a761b584'
-Client = Client(account_sid, auto_taken)
 
 @app.route('/')
 def home():
@@ -38,23 +34,8 @@ def land_detail(land_id):
         return "Land Not Found", 404
 
 
-@app.route('/contact',
-methods=['POST'])
+@app.route('/contact')
 def contact():
-    FirstName = request.form['FirstName']
-    LastName = request.form['LastName']
-    PhoneNumber = request.form['phone']
-    Email = request.form['email']
-    Message = request.form['message']
-    number = ['+224627021857']
-
-    body = f"message from {FirstName}: {LastName}: {PhoneNumber}: {Email}: {Message}"
-    for num in number:
-        Client.messages.create(body=body,
-                               
-from_='+14123619587', to=num)
-        whatsApp_link = "WhatsApp","_blank"
-        return redirect(whatsApp_link)
     return render_template('Contact.html')
 
 #Folder to store upload images and extension that should be allowed for images
