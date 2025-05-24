@@ -5,22 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Land Details</title>
   <link rel="stylesheet" href="/static/style.css">
+<link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
+
+
 </head>
 <body class="details-page">
-  <section class="AllLands-Sec">
+  <header>
     <nav>
-    <a href="/lands">Look For Lands</a>
-    <a href="/contact">Contact</a>
-   
-    <!-- <a href="index.html">Accueil</a> -->
+    <a href="{{ url_for('land.lands') }}">Look For Lands</a>
+    <a href="{{ url_for('land.contact') }}">Contact</a>
   </nav>
-  </section>  
+  </header> 
     <div class="land-details"> 
       <div class="cen"><h1>À propos de ce terrain</h1></div>
     <section class="gallery">
     
-      {% for img in land.images%}
-      <img src="{{ url_for('static', filename=img.split('static/')[1]) }}" alt="Gallery">
+      {% for img in land.gallery%}
+      <a href="{{img}}" data-lightbox="land-gallery">
+      <img src="{{ img }}" alt="gallery">
+      </a>
       {% endfor %}
 
     </section>
@@ -29,6 +32,7 @@
       <p><strong>Emplacement:</strong> {{land.location}}</p>
       <p><strong>Prix:</strong> {{land.price}}</p>
       <p> <big>Description:</big> {{land.description}}</p>
+      <p><big>Status</big> {{land.status}} </p>
       <ul> 
         <h2>Caractéristiques:</h2>
         {% for f in land.features %}
@@ -36,14 +40,22 @@
         {% endfor %}
        
       </ul>
-      <p>Num: {{land.contact.name}}</p>
-      <p>Numéro: <a href="tel:">{{land.contact.phone}}</a> </p>
-      <p>Email: <a href="mailto:">{{land.contact.email}}</a> </p>
-      <iframe src="{{land.map}}" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
-    <!-- <p>Loading land details...</p> -->
+      <p>Num: {{land.name}}</p>
+      <p>Numéro: <a href="tel:">{{land.phone}}</a> </p>
+      <p>Email: <a href="mailto:">{{land.email}}</a> </p>
+      
+      </section>
+
+      <p>Map URL</p>
+        <div id="map" data-lat="{{ land.latitude }}" data-lng="{{ land.longitude }}"></div>
+      
     <a class="back-link" href="/">Accueil</a>
   </div>
  <script src="/static/main.js" defer></script>
+ <!-- API Keys Script -->
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfFFPA8vNbobdaZhVNgbp-jc5oIt9hfnk&callback=initMap" async defer></script>
+
+<!-- lightbox To all multiple Images view -->
+<script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
 </body>
 </html>

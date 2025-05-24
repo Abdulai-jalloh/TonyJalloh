@@ -9,20 +9,29 @@
 <body class="log-p">
   <header>
     <nav>
-      <a href="{{ url_for('lands') }}" data-key="home-link" >terrain</a>
+      <a href="{{ url_for('land.lands') }}" data-key="home-link" >terrain</a>
       <!-- <a href="Land-details.html">Browse Lands</a> -->
-      <a href="{{ url_for('contact') }}" data-key="home-link" >Contact</a>
+      <a href="{{ url_for('land.contact') }}" data-key="home-link" >Contact</a>
       <a href="/">Accueil</a>
       <!-- <img src="images/menue.jpg" class="menue" alt="Menue"> -->
     </nav>
   </header>
-  
-<br> <br> <br> <br> <br> <br> <br> <br> <br>
+  <section class="Centers">
   <section class="login-page">
   <h2>se connecter</h2>
+ 
   <form action="" method="post" class="log-form">
-    <input type="text" name="username" placeholder="Username" required><br>
-     {% with messages = get_flashed_messages(with_categories=true) %}
+    {{ form.hidden_tag() }}
+
+    {{ form.Name.label }} <br>
+    {{ form.Name(size=32) }} <br>
+
+    {{form.Password.label}} <br>
+    {{form.Password(size=32)}} <br>
+
+
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
   {% for category, message in messages %}
 
@@ -30,11 +39,10 @@
   {% endfor %}
   {% endif %}
   {% endwith %} <br>
-    <input type="password" name="password" placeholder="password" required> <br>
-    <button type="submit">se connecte</button>
-  </form>
+    <button type="submit">Login</button>
 
- 
+  </form>
+</section>
 </section>
   <script src="/static/main.js" defer></script>
 </body>

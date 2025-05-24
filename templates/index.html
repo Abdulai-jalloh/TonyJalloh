@@ -16,15 +16,13 @@
     <!-- <h1>LandX - Buy Lands Easily</h1> -->
   </div>
     <nav>
-      <a href="{{ url_for('lands') }}" data-key="home-link" >terrain</a>
+      <a href="{{ url_for('land.lands') }}" data-key="home-link" >terrain</a>
       <!-- <a href="Land-details.html">Browse Lands</a> -->
-      <a href="{{ url_for('contact') }}" data-key="home-link" >Contact</a>
-      <a href="{{url_for('upload_land')}}">se connecter</a>
-      
+      <a href="{{ url_for('land.contact') }}" data-key="home-link" >Contact</a>
+      <a href="{{url_for('land.login')}}">Login</a>
       <!-- <img src="images/menue.jpg" class="menue" alt="Menue"> -->
     </nav>
   </header>
-
   <section class="hero">
 <div class="hero-content">
  
@@ -35,7 +33,7 @@
    <!-- <span id="searchIcon" class="search-icon">&#128269;</span> -->
   </div>
   
-  <a href="{{ url_for('lands') }}" class="btn">Terrain Disponible</a>
+<a href="{{ url_for('land.lands') }}" class="btn">Terrain Disponible</a>
 </div>
   </section>
   <div class="sec"> <h2 data-key="home-title" >Trouvez votre terrain idéal</h2> <br>
@@ -57,7 +55,7 @@
   </section>
 
   <footer id="Contact">
-    <a href="{{ url_for('contact') }}" data-key="home-link" >Contact</a>
+    <a href="{{ url_for('land.contact') }}" data-key="home-link" >Contact</a>
     <p>Contact Us: Awal Innovation.com | +224 123 456 789</p>
     <p> &copy; 2025 LandX. Tous droits réservés.</p>
   </footer>

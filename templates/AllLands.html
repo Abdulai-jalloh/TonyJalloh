@@ -7,14 +7,14 @@
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body class="AllLands">
-  <section class="AllLands-Sec">
-    <nav >
+  <header>
+    <nav>
       <a href="/">Accueil</a>
       <!-- <a href="Land-details.html">Browse Lands</a> -->
-      <a href="/contact">Contact</a>
+      <a href="{{ url_for('land.contact') }}">Contact</a>
       <!-- <a href="/admin">Admin</a> -->
     </nav>
-  </section>
+  </header> <br> <br> <br>
   <div class="run">
     <h1> <span>LandX</span> <br> <span>Achetez un terrain facilement</span></h1>
   </div>  <br> <br>
@@ -22,11 +22,10 @@
   <h3>Trouvez le terrain idéal en toute simplicité</h3>
   <p>Utilisez la barre de recherch pour explorer les terrains <br> disponibles par localisation.</p> </span> <br>
  
-  <div class="search-box">
-    <input type="text" id="search-location" placeholder="Entrez le nom de l'emplacement souhaité ">
-    <img src="/static/images/search.png" id="search-Icon" class="SerachIc" alt="">
-   <!-- <span id="searchIcon" class="search-icon">&#128269;</span> -->
-  </div>
+<div class="search-box">
+  <input type="text" id="search-location" placeholder="Entrez le nom de l'emplacement souhaité">
+    <img src="/static/images/search.png" id="search-Icon" class="SerachIc" alt="Search">
+</div>
   
   <div class="all-msg">
     <p>

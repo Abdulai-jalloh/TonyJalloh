@@ -9,12 +9,12 @@
 <body> 
   <header>
     <nav>
-      <a href="{{ url_for('lands') }}" data-key="home-link" >terrain</a>
-      <!-- <a href="Land-details.html">Browse Lands</a> -->
+      <a href="{{ url_for('land.lands') }}" data-key="home-link" >terrain</a>
+     
       <a href="/">Accueil</a>
       <!-- <img src="images/menue.jpg" class="menue" alt="Menue"> -->
     </nav>
-  </header>
+  </header> <br><br><br>
   <br>
   <div>
   
@@ -28,50 +28,66 @@
   {% endif %}
   {% endwith %}
 </div>
- <br>
-  <div class="admin-title">
-  <h2>Ajouter un nouveau terrain</h2>
+ <br> <br> <br> <br>
+  
 </div>
-    <form action="{{url_for('upload_land')}}" method="POST" enctype="multipart/form-data">
-    <fieldset>
-      <legend>New Land Info</legend>
-    <label for="title">Titre</label>
-    <input type="text" name="title" id="title" placeholder="land  title" required> <br>
-    <label for="location">Emplacement</label>
-    <input type="text" name="location" id="" placeholder="location" required> <br>
-    <label for="price">Prix</label>
-    <input type="text" name="price" id="" placeholder="land  price" required> <br>
-    <label for="description">Description</label>
-    <textarea rows="3" name="description" id="description" placeholder="land  price" required> </textarea> <br>
-    <label for="features">Caractéristiques (enter multiple):</label>
-    <input type="text" name="features" class="feat" placeholder="features 1">
-    <input type="text" name="features" class="feat" placeholder="features 2">
-    <input type="text" name="features" class="feat" placeholder="features 3">
-    <h3>Information sur le propriétaire</h3>
-    <label for="name">Nom:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="Phone">Numéro de téléphone</label>
-    <input type="text" id="phone" name="phone" required>
-    <label for="Phone">E-mail</label>
-    <input type="text" id="email" name="email" required>
+    <h2 class="admin-title">{{'Edit Land' if editing else 'Ajouter un nouveau terrain'}}</h2>
+    <form  method="POST" enctype="multipart/form-data">
+      {{ form.hidden_tag() }}
+    <p> {{ form.title.label }} </p> <br>
+    <p> {{ form.title() }} </p> <br>
+    <p>  {{ form.location.label }} </p> <br>
+    <p>  {{ form.location() }} </p> <br>
+    <p>  {{ form.price.label }} </p> <br>
+    <p>  {{ form.price() }} </p> <br>
+    <p> {{ form.description.label }} </p> <br>
+    <p> {{ form.description(rows=3, cols=40) }} </p> <br>
+    <p> {{ form.features.label }} </p> <br>
+    <p>  {{ form.features(rows=3, cols=40) }} </p> <br>
+    <p>  {{ form.status.label }} </p> <br>
+    <p>  {{ form.status() }} </p> <br>
 
-    <label for="map">URL Google Map</label>
-    <textarea rows="3" id="map" name="map" required></textarea>
+      <!-- Owner Information -->
+    <p>   {{ form.name.label }} </p> <br>
+    <p>   {{ form.name(size=70) }} </p> <br>
+    <p>   {{ form.phone.label }} </p> <br>
+    <p>   {{ form.phone(size=70) }} </p> <br>
+    <p>   {{ form.email.label }} </p> <br>
+    <p>   {{ form.email(size=70) }} </p> <br>
+    
+            <!-- Map showing -->
+    <p>{{ form.latitude.label}}</p> <br>
+    <p>{{ form.latitude()}}</p> <br>
+    <p>{{ form.longitude.label}}</p> <br>
+    <p>{{ form.longitude()}}</p> <br>
 
-    <h3>Téléverser une image</h3>
-    <label for="mainimage">Image pricipale</label>
-    <input  type="file" name="mainimage" id="mainimage" accept="image/*" required> <br>
+    <!-- Land Images -->
+     {% if editing and land.mainImage %}
+     <p>Current Main Image: </p>
+      <img src="{{(sale.mainImage) }}" alt="Main Image" width="200">
+     {% else %}
+     <p>No Image Uploaded yet.</p> <br>
+     {% endif %}
+    <p>  {{ form.mainImage.label }} </p> <br>
+    <p>  {{ form.mainImage() }} </p> <br>
 
-    <label for="gallery">Galerie d'images</label>
-    <input type="file" id="images" name="images" accept="image/*" multiple>
-    <button type="submit">Ajouter le terrain</button>
-</fieldset>
+      {% if editing and land.gallery %}
+      <p>Current Gallery Images</p>
+      {% for img in land.gallery %}
+      <img src="{{ img }}" alt="Gallery Image" width="100">
+      {% else %}
+      <p>Gallery is empty to images yet</p>
+      {% endfor %}
+      {% endif %}
+    <p>  {{ form.gallery.label }} </p> <br>
+    <p>  {{ form.gallery(multiple=true) }} </p> <br> 
+    <button type="submit">{{'Update' if editing else 'Submit' }}</button>
 </form>
 
 <div id="fd-root"></div>
-<script async defer crossorigin="anonymous" 
+<!-- <script async defer crossorigin="anonymous" 
 src="https://connect.fecebook.net/en_US/sdk.js#xfbml=1&version=v17.0" nonce="XYZ"></script>
-<div class="fb-share-button" data-href="{{land}}" data-layout="button_count"></div>
+<div class="fb-share-button" data-href="{{land}}" data-layout="button_count"></div> -->
 <script src="/static/main.js"></script>
 </body>
 </html>

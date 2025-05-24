@@ -12,24 +12,17 @@ body{
 }
 
 header {
-
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
   align-items: center;
   background-color: #008080;
   text-align: center;
   padding: 16px;
   font-size: bold;
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* background: #008080;
-  color: white;
-  padding: 1rem 2rem;
-  text-align: center; */
 }
 
-/* header .logo{
-  font-size: 1.5rem;
-  font-weight: bold;
-} */
 
 nav a {
   margin: 1rem;
@@ -105,6 +98,7 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0, 1);
 }
 
 footer  {
+
   text-align: center;
   padding: 1rem;
   background: #008080;
@@ -142,6 +136,7 @@ footer  {
 }
 
 .about {
+  font-weight: bold;
   background: #eef1f4;
   padding: 2rem;
   text-align: center;
@@ -157,7 +152,6 @@ width: 100%;
 }
 
 .search-icon{
-  /* align-items: center; */
   padding: 12px 16px;
   cursor: pointer;
   background-color: #2e8b57;
@@ -166,16 +160,47 @@ width: 100%;
   border-left: 1px solid #ccc;
 }
 
-.search-box{
+.search-box {
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 500px;
   margin: 20px auto;
-  border: 1px solid #ccc;
-  overflow: hidden;
-  max-width: 100%;
-  background-color: white;
-  margin-bottom: 20px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
+.search-box input[type="text"] {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.search-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.search-button:hover {
+  background: #f0f0f0;
+}
+
 .hero-content{
   max-width: 600px;
   margin: 0 auto;
@@ -213,8 +238,11 @@ legend{
   padding: 2px;
 }
 label, input, textarea{
+  margin-left: 10px;
+  font-size: large;
+  font-weight: bold;
   display: block;
-  width: 100%;
+  width: 90%;
   margin-bottom: 15px;
   box-sizing: border-box;
 }
@@ -229,12 +257,6 @@ input, textarea{
   }
 }
 
-/* .Contact-container input,
-.Contact-container textarea {
-width: 100%;
-padding: 10px;
-margin-bottom: 15px;
-} */
 
 button {
   background-color: #0a74da;
@@ -252,16 +274,7 @@ button {
 }
 
 
-.Head{
-  align-items: center;
-  background-color: #008080;
-  text-align: center;
-  padding: 16px;
-}
-.Head a {
-  margin: 1rem;
-  color: white;
-}
+
 
 .contact-hero{
   position: relative;
@@ -293,12 +306,7 @@ color: #0a74da;
 /* contact style */
 
 /*All lands Style*/
-.AllLands-Sec{
-  align-items: center;
-  text-align: center;
-  background: #008080;
-  padding: 1rem 2rem;
-}
+
 
 .run{
   background: linear-gradient(#eefff9 0%, #fcf0ed 49%, #dcdbff 100%);
@@ -393,10 +401,6 @@ margin: 5px ;
   text-decoration: none;
 }
 
-.AllLands {
-
-  /* background: url('/static/images/Land2.jpg') no-repeat center center/cover; */
-}
 #search-location{
   padding: 10px;
   width: 650px;
@@ -467,13 +471,23 @@ button:hover{
 
 /* Login style code */
 
+.Centers{
+  background: linear-gradient(to right, #7cb5c5, #9db8d8);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+
+}
 
 .login-page{
   text-align: center;
-  max-width: 700px;
+  width: 600px;
   background: #d4ffd3;
   border: 2px solid #007bff;
-  padding: 10px;
+  padding: 35px 45px;
+  border-radius: 15px;
   margin: 0 auto;
 }
 
@@ -492,9 +506,7 @@ button:hover{
   color: #5dd60c;
 }
 
-.log-p{
-  background-image: url(/static/images/house.jpg) ;
-}
+
 
 .log-form{
   border-radius: 10px;
@@ -516,3 +528,158 @@ footer a{
   font-weight: bold;
   color: white;
 }
+
+.flash_msg{
+  text-align: center;
+  font-weight: bold;
+}
+
+.DashBoard{
+  text-align: center;
+}
+
+.Delete-button{
+  display: inline;
+}
+
+#map{
+  height: 400px;
+  width: 100%;
+}
+
+table{
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+
+}
+
+  tr, th, td {
+    border: 1.5px solid rgb(241, 222, 222);
+    padding: 12px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+   }
+   th{
+    background-color: #f4f4f4;
+   }
+   img{
+    border-radius: 4px;
+   }
+   caption{
+    font-size: 1.5rem;
+    font-weight:bold ;
+    margin-bottom: 10px;
+    color: #333;
+   }
+
+   @media screen and (max-width: 769px) {
+    table{
+      font-size: 14px;
+    }
+    td{
+      padding: 8px;
+    }
+    
+   }
+
+   .admin-butt{
+    font-size: larger;
+    font-weight: bold;
+    
+    background-color: rgb(153, 144, 144);
+    margin: 10px;
+    width: 50%;
+    padding: 35px;
+    border-radius: 12px;
+   }
+ 
+   .admin-butt:hover{
+    background-color: #a1cf82;
+
+   }
+
+   .admin-intro{
+    text-align: center;
+    background: linear-gradient(to right, #9bcbd8, #96b3d6);
+    width: 100%;
+    height: 400px;
+
+   }
+ .adtxt h1 h2{
+   margin-top: 20px;
+ }
+
+ .upload-Images{
+  color: #fff;
+  font-weight: bold;
+  padding: 12px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background-color: #538ee6;
+  cursor: pointer;
+  width: 70%;
+  font-family: inherit;
+ }
+
+ .flash-msg{
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  color: #5dd60c;
+ }
+
+ .sold-card{
+  font-size: 20px;
+  font-weight: bold;
+  
+
+ }
+ .sold-card p a{
+  margin: 5px;
+  color: #fff;
+  background-color: #007bff;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+ }
+ .admin-bored{
+  text-align: center;
+  font-weight: bold;
+ }
+ .delete-msg{
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+ }
+
+ .land-Table{
+  margin-top: 30px;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  overflow: auto;
+ }
+
+ .action-butt{
+  
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #538ee6;
+  padding: 1.2rem 1.5rem;
+ }
+ .action-butt a{
+  color: white;
+ }
+ .delete-btn{
+    font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1.2rem 1.5rem;
+  background-color: red;
+ }
+
