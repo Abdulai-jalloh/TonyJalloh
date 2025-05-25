@@ -340,11 +340,20 @@ def Edit_land(land_id):
                         return redirect(url_for('admin_work'))
     return render_template('admin.html', form=form, editing=True, land=land)
 
-@land_bp.route('/admin/land/<int:land_id>/delete', 
+@land_bp.route('/admin/land/<int:land_id>/hide', 
 methods=['POST'])
-def delete_land(land_id):
+def hide_land(land_id):
     land = Land.query.get_or_404(land_id)
     land.visible = False
     db.session.commit()
-    flash("land deleted successfully.", "success")
+    flash("land Hided successfully.", "success")
+    return redirect(url_for('land.Admin_work'))
+
+@land_bp.route('/admin/land/<int:land_id>/delete',
+methods=['POST'])
+def delete_land(land_id):
+    land = Land.query.get_or_404(land_id)
+    db.session.delete(land)
+    db.session.commit()
+    flash("land Deleted successfully.", "success")
     return redirect(url_for('land.Admin_work'))
