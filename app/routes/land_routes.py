@@ -25,9 +25,9 @@ twil_whatsapp_num = os.getenv('TWILIO_WHATSAPP_NUMBER')
 Admin_whatsapp_num = os.getenv('ADMIN_WHATSAPP_NUMBER')
 
 #Email
-email_user = os.getenv('Email_user')
-email_password = os.getenv('Email_password')
-reciver_email = os.getenv('Reciver_Email')
+email_user = os.getenv('EMAIL_USER')
+email_password = os.getenv('EMAIL_PASSWORD')
+reciver_email = os.getenv('RECEIVER_EMAIL')
 
 client = Client(account_sid, auto_taken)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -44,13 +44,13 @@ def home():
 @land_bp.route('/lands')
 def lands():
   lands = Land.query.filter_by(status='Available', visible=True).all()
-  return render_template('AllLands.html', lands=lands)
+  return render_template('allLands.html', lands=lands)
 
 @land_bp.route('/land/<int:land_id>')
 def land_details(land_id):
   land = Land.query.get(land_id)
   if land:
-    return render_template('Land-details.html', land=land)
+    return render_template('land-details.html', land=land)
   else:
     return "Land Not Found", 404
   
@@ -219,7 +219,7 @@ def contact():
 
         return redirect(url_for('land.contact'))
 
-    return render_template('Contact.html', form=form)
+    return render_template('contact.html', form=form)
 
 @land_bp.route('/SellLand',
 methods=['GET', 'POST'])
@@ -251,11 +251,11 @@ def SellLand():
         db.session.commit()
         flash('Land Mark as Sold Successfuly', 'success')
         return redirect(url_for('land.dashboard'))
-    return render_template('SellLand.html', form=form)
+    return render_template('sellLand.html', form=form)
 @land_bp.route('/sold_land')
 def view_sold_land():
     sold_lands = Sale.query.order_by(Sale.sale_date.desc()).all()
-    return render_template('SoldLand.html', sold_lands=sold_lands)
+    return render_template('soldLand.html', sold_lands=sold_lands)
 
 @land_bp.route('/api/lands')
 def get_lands():
@@ -287,13 +287,13 @@ def get_lands():
 def Admin_work():
     lands = Land.query.order_by(Land.id.desc()).all() 
     Delete_form = DeleteForm()
-    return render_template('Admin_work.html', lands=lands, Delete_form=Delete_form)
+    return render_template('admin_work.html', lands=lands, Delete_form=Delete_form)
 
 #Route for the page to show land details
 @land_bp.route('/admin_View/land/<int:land_id>')
 def view_land(land_id):
     land = Land.query.get_or_404(land_id)
-    return render_template('Land-details.html', land=land)
+    return render_template('land-details.html', land=land)
 
 @land_bp.route('/admin/land/<int:land_id>/edit', 
 methods=['GET', 'POST'])

@@ -14,13 +14,14 @@ body{
 header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  z-index: 1000;
-  align-items: center;
-  background-color: #008080;
-  text-align: center;
-  padding: 16px;
-  font-size: bold;
+   display: flex;
+  background: #008080;
+  justify-content: space-between;
+  padding: 10px 10px;
+  border-bottom: 1px solid #000;
+  z-index: 10; 
 }
 
 
@@ -34,7 +35,6 @@ nav a {
   background-position: center;
 font-weight: bold;
   padding: 80px 20px;
-  color:black;
   text-align: center;
   background: url('/static/images/house.jpg') repeat center center/cover;
 }
@@ -683,3 +683,34 @@ table{
   background-color: red;
  }
 
+
+
+ /* Media quaris for navbar */
+ /* @media only screen and (max-width: 600px){
+   nav{
+    position: absolute;
+    width: 100%;
+    background: #000;
+    color: white;
+    left: 0;
+    top: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+  }
+  header nav a{
+    margin: 12px;
+    font-size: 15px;
+  }
+  .Menue-icon{
+    display: block;
+    width: 30px;
+  }
+   nav{
+  display: flex;
+ }
+ .Show-Menue{
+  max-height: 60px;
+ }
+ } */

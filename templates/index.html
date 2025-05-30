@@ -4,35 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootsrap@5.3.0/dist/css/bootsrap.min.css" rel="stylesheet" >
+  <link href="https://fonts.googleapis.com/css2?family=poppins:wght@200;300;400;500;600;700&diplay=swap" rel="stylesheet">
   <title>Home Page</title>
  
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body class="home-page">
-
   <header>
-
-    <div class="logo"> 
-    <!-- <h1>LandX - Buy Lands Easily</h1> -->
-  </div>
-    <nav>
+    <nav id="Menue-links">
       <a href="{{ url_for('land.lands') }}" data-key="home-link" >terrain</a>
-      <!-- <a href="Land-details.html">Browse Lands</a> -->
       <a href="{{ url_for('land.contact') }}" data-key="home-link" >Contact</a>
       <a href="{{url_for('land.login')}}">Login</a>
-      <!-- <img src="images/menue.jpg" class="menue" alt="Menue"> -->
+      <a href="{{ url_for('land.dashboard')}}">Admin DashBoard</a>
     </nav>
   </header>
+  
   <section class="hero">
 <div class="hero-content">
- 
-
   <div class="search-box">
     <input type="text" id="search-location" placeholder="Entrez le nom de l'emplacement souhaité ">
     <img src="/static/images/search.png" id="search-Icon" class="SerachIc" alt="">
    <!-- <span id="searchIcon" class="search-icon">&#128269;</span> -->
   </div>
-  
 <a href="{{ url_for('land.lands') }}" class="btn">Terrain Disponible</a>
 </div>
   </section>

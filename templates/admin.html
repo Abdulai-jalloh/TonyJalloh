@@ -43,11 +43,14 @@
     <p> {{ form.description.label }} </p> <br>
     <p> {{ form.description(rows=3, cols=40) }} </p> <br>
     <p> {{ form.features.label }} </p> <br>
-    <p>  {{ form.features(rows=3, cols=40) }} </p> <br>
+    <p>  {{ form.features() }} </p> <br>
+    <p>  {{ form.features() }} </p> <br>
+    <p>  {{ form.features() }} </p> <br>
     <p>  {{ form.status.label }} </p> <br>
     <p>  {{ form.status() }} </p> <br>
 
       <!-- Owner Information -->
+       
     <p>   {{ form.name.label }} </p> <br>
     <p>   {{ form.name(size=70) }} </p> <br>
     <p>   {{ form.phone.label }} </p> <br>

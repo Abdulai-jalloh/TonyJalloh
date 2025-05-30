@@ -21,7 +21,7 @@ def create_app():
   db_path = os.path.join(base_dir, '..', 'instance', 'database.db')
   db_uri = f"sqlite:///{os.path.abspath(db_path)}"
 
-  app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+  app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev_secret_fallback')
 
   app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 

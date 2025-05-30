@@ -1,11 +1,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const isIndex = document.body.classList.contains('home-page');
-  // const isDetails = document.body.classList.contains('details-page');
   const alllands = document.body.classList.contains('AllLands');
 
   //the if statment on the index(home) page.html
-
   if (isIndex) {
     const container = document.querySelector('.lands-container');
     const searchInput = document.getElementById('search-location');
@@ -69,10 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
   }
 
-
- 
-
-
   if (alllands) {
     const container = document.querySelector('.all-Lands');
     const searchInput = document.getElementById('search-location');
@@ -108,8 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
     // Code To Search for a country by Location in the all Lands Page
-// function setupSearch(allLands) {
-
 searchIcon.addEventListener('click', () =>  {
     searchKey()
   });
@@ -148,14 +140,7 @@ function initMap() {
   }
 }
 
-// function initMap() {
-//   const lat = parseFloat("{{ land.latitude | default(0.0) }}");
-//   const long = parseFloat("{{ land.longitude | default(0.0) }}");
-//   const location = { lat: lat, long: long };
-//   const map = new google.maps.Map(document.getElementById("map"), {
-//     zoom: 15,
-//     center: location
-//   });
-//   new google.maps.Marker({ position: location, map: map });
-// }
-
+function MenueFunction() {
+  const Thenav = document.getElementById('Menue-links')
+  Thenav.classList.toggle('Show-Menue')
+}
