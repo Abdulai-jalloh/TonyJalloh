@@ -578,6 +578,8 @@ table{
     color: #333;
    }
 
+
+
    @media screen and (max-width: 769px) {
     table{
       font-size: 14px;
@@ -683,34 +685,43 @@ table{
   background-color: red;
  }
 
+ .Menue-link{
+  width: 30px;
+  display: none;
+ }
+
 
 
  /* Media quaris for navbar */
- /* @media only screen and (max-width: 600px){
-   nav{
+ @media only screen and (max-width: 600px){
+   header nav{
     position: absolute;
     width: 100%;
     background: #000;
-    color: white;
+    color: #fff;
     left: 0;
     top: 100%;
+    justify-content: center;
     text-align: center;
-    margin-bottom: 20px;
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s;
+  
   }
   header nav a{
     margin: 12px;
     font-size: 15px;
   }
-  .Menue-icon{
+  .Menue-link{
+    margin-left: 95%;
+    margin-bottom: 0;
     display: block;
-    width: 30px;
+    width: 40px;
   }
    nav{
   display: flex;
  }
  .Show-Menue{
-  max-height: 60px;
+    min-height: 30px;
+  }
  }
- } */

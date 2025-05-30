@@ -140,7 +140,7 @@ function initMap() {
   }
 }
 
+let navbtn = document.getElementById('Menue-links')
 function MenueFunction() {
-  const Thenav = document.getElementById('Menue-links')
-  Thenav.classList.toggle('Show-Menue')
+  navbtn.classList.toggle('Show-Menue')
 }

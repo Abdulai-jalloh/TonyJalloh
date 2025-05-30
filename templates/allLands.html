@@ -8,12 +8,13 @@
 </head>
 <body class="AllLands">
   <header>
-    <nav>
-      <a href="/">Accueil</a>
-      <!-- <a href="Land-details.html">Browse Lands</a> -->
-      <a href="{{ url_for('land.contact') }}">Contact</a>
-      <!-- <a href="/admin">Admin</a> -->
+    <nav id="Menue-links">
+      <a href="{{ url_for('land.lands') }}" data-key="home-link" >terrain</a>
+      <a href="{{ url_for('land.contact') }}" data-key="home-link" >Contact</a>
+      <a href="{{url_for('land.login')}}">Login</a>
+      <a href="{{ url_for('land.dashboard')}}">Admin DashBoard</a>
     </nav>
+    <img src="/static/uploads/menue.jpg" class="Menue-link" alt="Menue" onclick="MenueFunction()">
   </header> <br> <br> <br>
   <div class="run">
     <h1> <span>LandX</span> <br> <span>Achetez un terrain facilement</span></h1>

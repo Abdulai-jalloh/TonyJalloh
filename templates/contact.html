@@ -9,10 +9,13 @@
 </head>
 <body class="Contact-page">
  <header> 
-  <nav>
-  <a href="/">Accueil</a>
-  <a href="{{ url_for('land.lands') }}" data-key="home-link" >terrain</a>
-  </nav>
+    <nav id="Menue-links">
+      <a href="{{ url_for('land.lands') }}" data-key="home-link" >terrain</a>
+      <a href="{{ url_for('land.contact') }}" data-key="home-link" >Contact</a>
+      <a href="{{url_for('land.login')}}">Login</a>
+      <a href="/"></a>
+    </nav>
+    <img src="/static/uploads/menue.jpg" class="Menue-link" alt="Menue" onclick="MenueFunction()">
  </header>
  <section class="contact-hero">
   <h1>Contacte nous</h1> <br>
