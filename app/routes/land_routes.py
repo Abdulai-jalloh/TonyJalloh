@@ -115,6 +115,7 @@ def upload_land():
                         features=features_list,
                         description=description,
                         status=status,
+                        visible=True,
                         name=name,
                         phone=phone,
                         email=email,
