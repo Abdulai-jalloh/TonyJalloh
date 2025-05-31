@@ -8,12 +8,13 @@
 </head>
 <body>
     <header>
-    <nav>
+    <nav id="Menue-links">
       <a href="{{ url_for('land.lands') }}" data-key="home-link" >terrain</a>
-     <a href="{{ url_for('land.dashboard')}}">Admin DashBoard</a>
-      <a href="/">Accueil</a>
-      <!-- <img src="images/menue.jpg" class="menue" alt="Menue"> -->
+      <a href="{{ url_for('land.contact') }}" data-key="home-link" >Contact</a>
+      <a href="{{url_for('land.login')}}">Login</a>
+      <a href="{{ url_for('land.dashboard')}}">Admin DashBoard</a>
     </nav>
+    <img src="/static/uploads/menue.jpg" class="Menue-link" alt="Menue" onclick="MenueFunction()">
   </header>
     <br> <br><br>
     <section class="admin-bored">
