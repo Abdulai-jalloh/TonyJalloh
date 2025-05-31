@@ -11,8 +11,8 @@
        <a href="{{ sale.land.mainImage }}"> <img src="{{( sale.land.mainImage) }}" alt="Land image"> </a>
       {% endif %}
       <h3><strong>Title</strong> {{ sale.land.title if sale.land else 'No title' }}</h3>
-      <p><strong>Location</strong> {{ sale.land.location if sale.land else 'No location' }}</p>
-      <p><strong>Price</strong> {{ sale.land.price if sale.land else 'No price' }}</p>
+      <p><strong>Emplacement</strong> {{ sale.land.location if sale.land else 'No location' }}</p>
+      <p><strong>prix</strong> {{ sale.land.price if sale.land else 'No price' }}</p>
 
       <p>Buyer: {{ sale.buyerName }}</p>
       <p>Phone: {{ sale.phone }}</p>

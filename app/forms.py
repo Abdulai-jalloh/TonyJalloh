@@ -44,9 +44,9 @@ class DeleteForm(FlaskForm):
   submit = SubmitField('Delete')
 
 class SellLandForm(FlaskForm):
-  land_id = SelectField('Select Land', choices=[], coerce=int, validators=[DataRequired()], render_kw={"class": "upload-Images"})
-  buyerName = StringField('Buyer Name', validators=[DataRequired()])
+  land_id = SelectField('Sélectionner le terrain', choices=[], coerce=int, validators=[DataRequired()], render_kw={"class": "upload-Images"})
+  buyerName = StringField('Nom de lacheteur ', validators=[DataRequired()])
   phone = StringField('Phone', validators=[DataRequired()])
-  sale_date = DateField('Sales Date', format='%Y-%m-%d', default=date.today)
-  documents = FileField('Upload Documnet', validators=[FileAllowed(['jpg', 'jpeg', 'pdf', 'png'], 'Images or PDFs only!')], render_kw={"class": "upload-Images"})
-  submit = SubmitField('Mark as Sold')
+  sale_date = DateField('Date de vente', format='%Y-%m-%d', default=date.today)
+  documents = FileField('Téléverser des Documnet', validators=[FileAllowed(['jpg', 'jpeg', 'pdf', 'png'], 'Images or PDFs only!')], render_kw={"class": "upload-Images"})
+  submit = SubmitField('Marquer comme vendu')
